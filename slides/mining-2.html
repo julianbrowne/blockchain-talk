@@ -1,0 +1,51 @@
+
+<h3>Mining</h3>
+
+<div class="bc-group darker">
+    <div class="bc-row">
+        <label class="bc-label" for="data11">data</label>
+        <textarea class="bc-textarea narrow" id="data11" rows="1">alice -> bob: 10</textarea>
+    </div>
+    <div class="bc-row">
+        <label class="bc-label" for="hash11">hash</label>
+        <input class="bc-inputtext" id="hash11" type="text" disabled>
+    </div>
+</div>
+
+<div class="bc-group">
+    <div class="bc-row">
+        <label class="bc-label" for="data21">data</label>
+        <textarea class="bc-textarea narrow" id="data21" rows="1">charles -> bob: 10</textarea>
+    </div>
+    <div class="bc-row">
+        <label class="bc-label" for="hash21">hash</label>
+        <input class="bc-inputtext" id="hash21" type="text" disabled>
+    </div>
+</div>
+
+<div class="bc-group darker">
+    <div class="bc-row">
+        <label class="bc-label" for="data31">data</label>
+        <textarea class="bc-textarea narrow" id="data31" rows="1">bob -> alice: 5</textarea>
+    </div>
+    <div class="bc-row">
+        <label class="bc-label" for="hash31">hash</label>
+        <input class="bc-inputtext" id="hash31" type="text" disabled>
+    </div>
+</div>
+
+<div class="bc-group fragment">
+    <div class="bc-row">
+        <label class="bc-label" for="nonce">random</label>
+        <input class="bc-inputtext narrow" id="nonce" type="text" disabled>
+        <label class="bc-label" for="hash-target">target</label>
+        <input class="bc-inputtext narrow" id="hash-target" type="text" value="0000">
+        <img id="bitcoin" width="40px" src="../assets/img/bitcoin.png">
+        <img id="minerfail" width="40px" src="../assets/img/fail.png">
+    </div>
+    <div class="bc-row">
+        <label class="bc-label" for="seal1">hash</label>
+        <input style="font-size: 16px; width: 60%" class="bc-inputtext" id="seal1" type="text" disabled>
+        <button style="display: inline-block;" id="start-mining">mine</button>
+    </div>
+</div>

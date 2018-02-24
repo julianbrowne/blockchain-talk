@@ -1,0 +1,101 @@
+
+.reveal section img {
+	border: none;
+}
+
+.reveal small {
+	vertical-align: text-bottom !important;
+	padding-bottom: 5px;
+}
+
+section {
+	width: 1200px;
+	margin: 10x auto;
+	border: 1px solid gray;
+	display: block;
+}
+
+section.scrollable { 
+	overflow-y: auto !important;
+	overflow-x: hidden !important;
+	height: 700px;
+}
+
+.bc-group { 
+    display: block;
+    margin: 10px !important;
+    vertical-align: middle;
+}
+
+.bc-row { 
+    display: block;
+    vertical-align: middle;
+    text-align: left;
+    /*border: 1px solid red !important;*/
+}
+
+.bc-float-left { 
+	float: left !important;
+	vertical-align: middle !important;
+}
+
+.darker { 
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+}
+
+img {
+	vertical-align: middle !important;
+}
+
+bc-h200 {
+	height: 200px;
+}
+
+.bc-label { 
+	color: black;
+	display: inline-block;
+	vertical-align: top !important;
+	text-align: right;
+	width: 100px;
+	max-width: 100%;
+	margin: 10px !important;
+	font-weight: 700 !important;
+	font-size: 20px !important;
+}
+
+.bc-inputtext { 
+	font-size: 20px;
+	border: none;
+	resize: none;
+	width: 80%;
+	outline : none;
+	padding: 5px;
+	margin: 10px;
+}
+
+.bc-textarea { 
+	font-size: 20px;
+	border: none;
+	resize: none;
+	width: 80%;
+	height: 300px;
+	outline : none;
+	padding: 5px;
+	margin: 10px;
+}
+
+.bc-textarea.narrow {
+	height: 25px;
+}
+
+.bc-inputtext.narrow {
+	width: 20%;
+}
+
+.bc-inputtext.short {
+	width: 80px;
+}
+
+.bc-align-middle {
+	vertical-align: middle;
+}

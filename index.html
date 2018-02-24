@@ -1,0 +1,138 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Blockchain: Secret Sauce or Snake oil?</title>
+
+		<script src="vendor/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+
+		<!-- Reveal Presentation  -->
+
+		<script src="vendor/reveal/lib/js/head.min.js"></script>
+		<script src="vendor/reveal/js/reveal.js"></script>
+
+		<link rel="stylesheet" href="vendor/reveal/css/reveal.css">
+		<link rel="stylesheet" href="vendor/reveal/lib/css/zenburn.css">
+
+		<!-- Demo Assets  -->
+
+		<script src="vendor/js-sha256/build/sha256.min.js"></script>
+		<script src="assets/js/bcdemo.js"></script>
+
+		<link rel="stylesheet" href="assets/css/solarized-theme-modified.css">
+		<link rel="stylesheet" href="assets/css/presentation.css">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown="slides/title.md">intro</section>
+				<section data-external="slides/much-ado.html">much ado</section>
+				<section data-external="slides/satoshi.html">satoshi</section>
+				<section data-external="slides/spending.html">spending</section>
+				<section data-external="slides/scaling.html">scaling</section>
+				<section data-external="slides/secret-1.html">secret</section>
+				<section data-external="slides/secret-2.html">secret</section>
+				<section data-external="slides/one-way-encryption.html">one way encryption</section>
+				<section data-external="slides/hash.html" data-state="hash">hash</section>
+				<section data-external="slides/links.html" data-state="links">links</section>
+				<section data-external="slides/trees.html">trees</section>
+				<section data-external="slides/chains.html">chains</section>
+				<section data-external="slides/mining-1.html">mining 1</section>
+				<section data-external="slides/mining-2.html" data-state="mining2">mining 2</section>
+				<section data-external="slides/mining-3.html">mining 3</section>
+				<section data-external="slides/signing.html">signing</section>
+			</div>
+		</div>
+		<script>
+
+			Reveal.initialize({ 
+				history: true,
+				dependencies: [ 
+					{ src: 'vendor/reveal/plugin/markdown/marked.js' },
+					{ src: 'vendor/reveal/plugin/markdown/markdown.js' },
+					{ src: 'vendor/external/external.js', 
+						condition: function() { 
+							return !!document.querySelector( '[data-external]' ); }
+					},
+					{ src: 'vendor/reveal/plugin/notes/notes.js', async: true },
+					{ src: 'vendor/reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+
+			Reveal.addEventListener('hash', function() { 
+				$("#hash").val(bcDemo.hash(''));
+				$("#data").keyup(function() { 
+					var message = $("#data").val();
+					var digest = bcDemo.hash(message);
+					$("#hash").val(digest);
+				});
+			});
+
+			Reveal.addEventListener('links', function() { 
+
+				function updateHashes() { 
+					d1 = $("#data1").val();
+					d2 = $("#data2").val();
+					d3 = $("#data3").val();
+
+					h1 = bcDemo.hash(d1);
+					h2 = bcDemo.hash(h1.concat(d2));
+					h3 = bcDemo.hash(h1.concat(h2).concat(d3));
+
+					$("#hash1").val(h1);
+					$("#hash2").val(h2);
+					$("#hash3").val(h3);
+				}
+
+				$("#data1").keyup(updateHashes);
+				$("#data2").keyup(updateHashes);
+				$("#data3").keyup(updateHashes);
+
+			});
+
+			Reveal.addEventListener('mining2', function() { 
+
+				$("#bitcoin").hide();
+				$("#minerfail").hide();
+
+				function updateHashes() { 
+
+					d1 = $("#data11").val();
+					d2 = $("#data21").val();
+					d3 = $("#data31").val();
+
+					h1 = bcDemo.hash(d1);
+					h2 = bcDemo.hash(h1.concat(d2));
+					h3 = bcDemo.hash(h1.concat(h2).concat(d3));
+
+					$("#hash11").val(h1);
+					$("#hash21").val(h2);
+					$("#hash31").val(h3);
+				}
+
+				updateHashes();
+
+				$("#data11").keyup(updateHashes);
+				$("#data21").keyup(updateHashes);
+				$("#data31").keyup(updateHashes);
+
+				$("#start-mining").click(function() { 
+
+					$("#bitcoin").hide();
+					$("#minerfail").hide();
+
+					var blockData = $("#hash31").val();
+					var hashTarget = $('#hash-target').val().toString();
+
+					var miner = new bcDemo.Miner(blockData, hashTarget);
+					miner.mine();
+
+				});
+
+			});
+
+		</script>
+	</body>
+</html>
