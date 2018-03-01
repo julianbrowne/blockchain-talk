@@ -13,33 +13,59 @@ Reveal.initialize({
 });
 
 Reveal.addEventListener('hash', function() { 
-	$("#hash").val(bcDemo.hash(''));
-	$("#data").keyup(function() { 
-		var message = $("#data").val();
-		var digest = bcDemo.hash(message);
-		$("#hash").val(digest);
-	});
+
+	$("#digest-01").val(bcDemo.hash(""));
+
+	$("#message-01").keyup(bcDemo.updateHashValueForTextInput);
+
+	$("#digest-02").html(bcDemo.hash("alice"));
+
 });
 
 Reveal.addEventListener('links', function() { 
 
-	function updateHashes() { 
-		d1 = $("#data1").val();
-		d2 = $("#data2").val();
-		d3 = $("#data3").val();
+	var saveStateWidgetsSelector = ".bc-save-state-widget";
 
-		h1 = bcDemo.hash(d1);
-		h2 = bcDemo.hash(h1.concat(d2));
-		h3 = bcDemo.hash(h1.concat(h2).concat(d3));
+	$(saveStateWidgetsSelector).each (function() { 
+		var element = $(this);
+		element.data("state-manager", new bcDemo.StateManager(element));
+	});
 
-		$("#hash1").val(h1);
-		$("#hash2").val(h2);
-		$("#hash3").val(h3);
-	}
+	$(saveStateWidgetsSelector).on("click", function() { 
+		$(this).data("state-manager").toggleSaveState();
+	});
 
-	$("#data1").keyup(updateHashes);
-	$("#data2").keyup(updateHashes);
-	$("#data3").keyup(updateHashes);
+	$("#clear-all").on("click", function() { 
+
+		var allTextInputs = $(this).closest("section").find(".bc-mesg-text-input");
+
+		allTextInputs.each(function() { 
+			$(this).val("");
+			bcDemo.updateHashValueForChainedTextInputs($(this));
+			var allStateManagers = $(this)
+				.closest("section")
+				.find(".bc-save-state-widget");
+
+			allStateManagers.each(function(index) { 
+				$(this).data("state-manager").checkAndAlertStateChange();
+			});
+		});
+
+	});
+
+	$(".bc-mesg-text-input").keyup(function() { 
+
+		bcDemo.updateHashValueForChainedTextInputs($(this));
+
+		var allStateManagers = $(this)
+			.closest("section")
+			.find(".bc-save-state-widget");
+
+		allStateManagers.each(function(index) { 
+			$(this).data("state-manager").checkAndAlertStateChange();
+		});
+
+	});
 
 });
 
@@ -65,7 +91,7 @@ Reveal.addEventListener('mining2', function() {
 
 	updateHashes();
 
-	$("#data11").keyup(updateHashes);
+	$("#data11").keyup(updateHashes); 
 	$("#data21").keyup(updateHashes);
 	$("#data31").keyup(updateHashes);
 
