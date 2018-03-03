@@ -16,19 +16,20 @@ var bcDemo = (function() {
 		this.blockData = blockData;
 		this.timer = null;
 		this.mineAttempts = 0;
-		this.maxAttempts = 300000;
+		this.maxAttempts = 500000;
 		this.targetHashPrefix = targetHashPrefix;
+		this.targetHashPrefixLength = targetHashPrefix.length
 
 		function updateDisplay(digest) { 
-			$('#nonce').val(miner.mineAttempts);
-			$('#seal1').val(digest);
+			$('#nonce').html(miner.mineAttempts);
+			$('#digest-24').html(digest);
 		}
 
 		this.mine = function() { 
 
 			var digest = hash(this.blockData + miner.mineAttempts);
 
-			if(digest.substr(0, 4) === this.targetHashPrefix) { 
+			if(digest.substr(0, miner.targetHashPrefixLength) === this.targetHashPrefix) { 
 				updateDisplay(digest);
 				$("#bitcoin").show();
 				clearTimeout(timer);
@@ -116,8 +117,8 @@ var bcDemo = (function() {
 	};
 
 	function updateHashValueForTextInput(element, value) { 
-		var element = element || $(this);
-		var textInputElementValue = value || element.val();
+		var element = (element == undefined) ? $(this) : element;
+		var textInputElementValue = (value == undefined) ? element.val() : value;
 		var digest = hash(textInputElementValue);
 		var partnerHashTextDisplayElement = getPartnerDigestDisplayElement(element);
 		partnerHashTextDisplayElement.val(digest);
@@ -130,9 +131,6 @@ var bcDemo = (function() {
 		var allDigestDisplayElements = getAllDigestDisplayElements(textElement);
 		var partnerDigestDisplayElement = getPartnerDigestDisplayElement(textElement);
 		var indexOfThisDigestElement = allDigestDisplayElements.index(partnerDigestDisplayElement);
-		console.log("all digest elements: ", allDigestDisplayElements.length);
-
-		console.log("updating element: ", indexOfThisDigestElement);
 
 		if(indexOfThisDigestElement==0) { 
 			updateHashValueForTextInput(textElement, textInputElementValue);
@@ -145,23 +143,14 @@ var bcDemo = (function() {
 		}
 
 		var indexOfTargetDigestDisplayElement = allDigestDisplayElements.index(partnerDigestDisplayElement);
-		//console.log("this element index: ", indexOfTargetDigestDisplayElement);
 		implicatedDigestDisplayElements = allDigestDisplayElements.slice(indexOfTargetDigestDisplayElement+1);
-		//console.log("following elements: ", implicatedDigestDisplayElements.length);
 
 		implicatedDigestDisplayElements.each(function(index) { 
-			//console.log("index: ", index);
 			currentMessageValueOfThisElement = getPartnerMessageDisplayElement($(this)).val();
-			console.log("current value: ", currentMessageValueOfThisElement);
 			var indexOfThisDigestElement = allDigestDisplayElements.index($(this));
-			//console.log("following: index", indexOfThisDigestElement);
 			var previousDigestElement = allDigestDisplayElements.get(indexOfThisDigestElement-1);
-			//console.log("following: previous: index: ", indexOfThisDigestElement-1);
-			//console.log("following: previous: html: ", previousDigestElement);
 			var digestValueOfPreviousMessage = $(previousDigestElement).val();
-			//console.log("following: previous: value: ", digestValueOfPreviousMessage);
 			messageToHash = currentMessageValueOfThisElement + digestValueOfPreviousMessage;
-			console.log("message to hash: ", messageToHash);
 			updateHashValueForTextInput($(this), messageToHash);
 		});
 
