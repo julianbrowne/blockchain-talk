@@ -88,7 +88,7 @@ Reveal.addEventListener("xor", function() {
 
 });
 
-Reveal.addEventListener("pinboard", function() { 
+Reveal.addEventListener("hash", function() { 
 
 	$("#digest-01").val(bcDemo.hash(""));
 
