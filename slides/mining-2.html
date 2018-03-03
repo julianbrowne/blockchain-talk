@@ -3,34 +3,34 @@
 
 <div class="bc-group darker bordered">
     <div class="bc-row">
-        <label class="bc-label" for="data11">data</label>
-        <input type="text" class="bc-mesg-text-input" id="data11" value="alice -> bob: 10">
+        <label class="bc-label" for="message-21">data</label>
+        <input id="message-21" class="bc-mesg-text-input chained" type="text" value="alice -> bob: 10">
     </div>
     <div class="bc-row">
-        <label class="bc-label" for="hash11">hash</label>
-        <input class="bc-hash-text-display" id="hash11" type="text" disabled>
+        <label class="bc-label" for="digest-21">hash</label>
+        <input id="digest-21" class="bc-hash-text-display" type="text" disabled>
     </div>
 </div>
 
 <div class="bc-group bordered">
     <div class="bc-row">
-        <label class="bc-label" for="data21">data</label>
-        <input type="text" class="bc-mesg-text-input" id="data21" value="charles -> bob: 10">
+        <label class="bc-label" for="message-22">data</label>
+        <input id="message-22" class="bc-mesg-text-input chained" type="text" value="charles -> bob: 10">
     </div>
     <div class="bc-row">
-        <label class="bc-label" for="hash21">hash</label>
-        <input class="bc-hash-text-display" id="hash21" type="text" disabled>
+        <label class="bc-label" for="digest-22">hash</label>
+        <input id="digest-22" class="bc-hash-text-display" type="text" disabled>
     </div>
 </div>
 
 <div class="bc-group darker bordered">
     <div class="bc-row">
-        <label class="bc-label" for="data31">data</label>
-        <input type="text" class="bc-mesg-text-input" id="data31" value="bob -> alice: 5">
+        <label class="bc-label" for="message-23">data</label>
+        <input id="message-23" class="bc-mesg-text-input chained" type="text" value="bob -> alice: 5">
     </div>
     <div class="bc-row">
-        <label class="bc-label" for="hash31">hash</label>
-        <input class="bc-hash-text-display" id="hash31" type="text" disabled>
+        <label class="bc-label" for="digest-23">hash</label>
+        <input id="digest-23" class="bc-hash-text-display" type="text" disabled>
     </div>
 </div>
 
@@ -38,19 +38,17 @@
 
     <div class="bc-row">
         <span class="bc-label">random</span>
-        <span id="nonce" class="bc-width-medium bordered"></span>
-
+        <span id="nonce" class="bc-width-medium bc-field"></span>
         <label class="bc-label" for="hash-target">target</label>
-        <input class="bc-hash-text-display bc-width-small" id="hash-target" type="text" value="0000">
-
-        <img id="bitcoin" width="40px" src="../assets/img/bitcoin.png">
-        <img id="minerfail" width="40px" src="../assets/img/fail.png">
+        <input id="hash-target" class="bc-width-small" type="text" value="0000">
+        <img id="bitcoin" class="middle" width="40px" src="../assets/img/bitcoin.png">
+        <img id="minerfail" class="middle" width="40px" src="../assets/img/fail.png">
+        <span id="start-mining"><i class="fas fa-search"></i></span>
     </div>
 
     <div class="bc-row">
         <span class="bc-label">hash</span>
-        <span id="seal1" class="bc-hash-text-display bc-width-xxlarge bordered"></span>
-        <button style="display: inline-block;" id="start-mining">mine</button>
+        <span id="digest-24" class="bc-hash-text-display bc-width-xxlarge bordered"></span>
     </div>
 
 </div>
