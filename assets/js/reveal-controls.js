@@ -36,7 +36,59 @@ Reveal.addEventListener("pinboard", function() {
 
 });
 
-Reveal.addEventListener('hash', function() { 
+Reveal.addEventListener("xor", function() { 
+
+	function convertToBinary(oneCharString) { 
+		var asciiBinary = "000000000";
+		var bin = oneCharString[0].charCodeAt(0).toString(2) + " ";
+		return (asciiBinary + bin).slice(-asciiBinary.length);
+	};
+
+	$(".xor-input").keyup(function() { 
+
+		var char = $(this).val();
+		var charAsBinaryString = convertToBinary(char);
+		$(this).data("bin-string", charAsBinaryString);
+
+		for(var i=0; i<charAsBinaryString.length; i++) { 
+			var outputTargetSelector = "#" + $(this).attr("id") + "-" + i;
+			$(outputTargetSelector).val(charAsBinaryString[i]);
+		}
+
+	});
+
+	$("#clear-digits").on("click", function() { 
+		$(".bc-digit-input").val("");
+	});
+
+	$("#do-xor").on("click", function() { 
+		var temp = ""
+		var result = [];
+		$(".xor-input").each(function() { 
+			var bs = $(this).data("bin-string");
+			if(temp === "") { 
+				temp = bs;
+			}
+			else { 
+				for(var i=0; i<bs.length; i++) { 
+					var a = parseInt(temp[i]);
+					var b = parseInt(bs[i]);
+					isXOR = (( a || b ) && !( a && b ));
+					var newDigit = isXOR ? "1" : "0";
+					result[i] = newDigit;
+					$("#xor-out-" + i).val(newDigit);
+				}
+			}
+		})
+		.promise()
+    	.done(function() { 
+    		$("#xor-out").val(parseInt(result.join(""), 2).toString());
+    	});
+	});
+
+});
+
+Reveal.addEventListener("pinboard", function() { 
 
 	$("#digest-01").val(bcDemo.hash(""));
 

@@ -250,3 +250,14 @@ span.bc-hash-text-display {
     background: none;
     box-shadow: none;
 }
+
+#bcdemo .bc-digit-input { 
+	width: 20px;
+	border: 1px solid gray;
+	text-align: center;
+}
+
+#bcdemo .xor-input,
+#bcdemo .xor-output { 
+	width: 50px;
+}
