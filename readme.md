@@ -12,8 +12,9 @@ Inspired by [Anders Brownworth](https://github.com/anders94)'s awesome [blockcha
 [JQuery](https://jquery.com/) 3.3.1  
 [JS Sha256](https://github.com/emn178/js-sha256.git) 0.9.0 by Yi-Cyuan Chen  
 [Font Awesome](https://fontawesome.com) 5.0.7  
+Pinboard adapted from [CSS Sticky Notes](https://github.com/rheh/CSS-Sticky-Notes.git) by Ray Hammond
 
-More about the content can be found in the [links doc](links.md)
+More about the content can be found in the [content doc](content.md)
 
 # Installation
 
