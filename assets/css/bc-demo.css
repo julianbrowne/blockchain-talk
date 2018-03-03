@@ -4,168 +4,249 @@
 **/
 
 body {
-	background: #FFCC5C !important;
+	background: #FFCC5C;
 }
 
-h1, h3 {
-	color: black !important;
+#bcdemo h1, 
+#bcdemo h3 { 
+	color: #000000;
 }
 
-ul li { 
-	color: #38444C !important;
+#bcdemo ul li { 
+	color: #38444C;
 	list-style-type: square;
 }
 
-span {
+#bcdemo span {
 	display: inline-block;
 	min-height: 25px;
-	margin: 10px !important;
-	vertical-align: middle !important;
+	margin: 10px;
+	vertical-align: middle;
 }
 
 /**
  *	Reveal Overrides
 **/
 
-.reveal section img {
+#bcdemo .reveal section img {
 	border: none;
 }
 
-.reveal small {
-	vertical-align: text-bottom !important;
+#bcdemo .reveal small {
+	vertical-align: text-bottom;
 	padding-bottom: 5px;
 }
 
-section {
-	width: 1200px;
-	margin: 10x auto;
-	border: 1px solid gray;
-	display: block;
+#bcdemo section { 
 }
 
-section.scrollable { 
-	overflow-y: auto !important;
-	overflow-x: hidden !important;
-	height: 700px;
+#bcdemo section.scrollable {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 700px;
+	margin: 15px -300px 15px 15px;
+	padding-right: 300px;
 }
 
 /**
  *	Local add-ons
 **/
 
-.bc-group { 
+#bcdemo .bc-group { 
     display: block;
-    margin: 10px !important;
+    margin: 10px;
     vertical-align: middle;
-    border: 1px solid red !important;
 }
 
-.bc-row { 
+#bcdemo .bc-row { 
     display: block;
     vertical-align: middle;
     text-align: left;
-    /*border: 1px solid red !important;*/
+    /*border: 1px solid red;*/
 }
 
-.bc-float-left { 
-	float: left !important;
-	vertical-align: middle !important;
-}
-
-.darker { 
-	background: #FA9920;
-}
-
-.bordered { 
-	border: 1px solid white !important;
-}
-
-img {
-	vertical-align: middle !important;
-}
-
-bc-h200 {
-	height: 200px;
-}
-
-.bc-label { 
-	color: black !important;
-	display: inline-block !important;
-	vertical-align: top !important;
-	text-align: right !important;
-	width: 100px !important;
-	max-width: 100% !important;
-	margin: 10px !important;
-	font-weight: 700 !important;
-	font-size: 20px !important;
-	vertical-align: baseline !important;
-}
-
-.bc-hash-text-display,
-.bc-mesg-text-input,
-.bc-mesg-textarea-input { 
-	font-size: 20px !important;
-	border: none !important;
-	resize: none !important;
-	width: 80% !important;
-	outline : none !important;
-	padding: 5px !important;
-	margin: 10px !important;
-}
-
-.bc-text-top { 
-	vertical-align: top !important;
-}
-
-span.bc-hash-text-display { 
-	color: black !important;
-}
-
-.bc-width-small { 
-	width: 100px !important;
-	min-width: 100px !important;
-}
-
-.bc-width-medium { 
-	width: 200px !important;
-	min-width: 200px !important;
-}
-
-.bc-width-large { 
-	width: 300px !important;
-	min-width: 300px !important;
-}
-
-.bc-width-xlarge { 
-	width: 400px !important;
-	min-width: 400px !important;
-}
-
-.bc-width-xxlarge { 
-	width: 500px !important;
-	min-width: 500px !important;
-}
-
-.bc-width-xxxlarge { 
-	width: 650px !important;
-	min-width: 650px !important;
-}
-
-.bc-align-middle {
+#bcdemo .bc-float-left { 
+	float: left;
 	vertical-align: middle;
 }
 
-.bc-save-state-widget { 
+#bcdemo .darker { 
+	background: #FA9920;
+}
+
+#bcdemo .bordered { 
+	border: 1px solid white;
+}
+
+#bcdemo img.middle { 
+	vertical-align: middle;
+}
+
+#bcdemo div.middle { 
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#bcdemo bc-h200 {
+	height: 200px;
+}
+
+#bcdemo .bc-label { 
+	color: black;
+	display: inline-block;
+	vertical-align: top;
+	text-align: right;
+	width: 100px;
+	max-width: 100%;
+	margin: 10px;
+	font-weight: 700;
+	font-size: 20px;
+	vertical-align: baseline;
+}
+
+#bcdemo input, 
+#bcdemo textarea, 
+#bcdemo .bc-field { 
+	color: black;
+	font-size: 20px;
+	border: none;
+	resize: none;
+	outline : none;
+	padding: 5px;
+	margin: 10px;
+}
+
+#bcdemo .bc-hash-text-display,
+#bcdemo .bc-mesg-text-input,
+#bcdemo .bc-mesg-textarea-input { 
+	font-size: 20px;
+	border: none;
+	resize: none;
+	width: 80%;
+	outline : none;
+	padding: 5px;
+	margin: 10px;
+}
+
+#bcdemo .bc-text-top { 
+	vertical-align: top;
+}
+
+span.bc-hash-text-display { 
+	color: black;
+}
+
+#bcdemo .bc-width-small { 
+	width: 100px;
+	min-width: 100px;
+}
+
+#bcdemo .bc-width-medium { 
+	width: 200px;
+	min-width: 200px;
+}
+
+#bcdemo .bc-width-large { 
+	width: 300px;
+	min-width: 300px;
+}
+
+#bcdemo .bc-width-xlarge { 
+	width: 400px;
+	min-width: 400px;
+}
+
+#bcdemo .bc-width-xxlarge { 
+	width: 500px;
+	min-width: 500px;
+}
+
+#bcdemo .bc-width-xxxlarge { 
+	width: 650px;
+	min-width: 650px;
+}
+
+#bcdemo .bc-align-middle {
+	vertical-align: middle;
+}
+
+#bcdemo .bc-save-state-widget { 
 	color: green;
 }
 
-.bc-save-state-widget.locked { 
+#bcdemo .bc-save-state-widget.locked { 
 	color: tomato;
 }
 
-.mismatch-alert { 
-	border: 3px solid red !important;
-	background:rgba(0,0,0,0.5);
+#bcdemo .bc-button { 
+	background: #EDEFF0;
+	width: 80px;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2), 0 5px 10px 0 rgba(0,0,0,0.19);
+}
+
+#bcdemo .bc-button:hover { 
+	box-shadow: none;
+	transition: box-shadow 0.1s ease-in-out;
+}
+
+#bcdemo .mismatch-alert { 
+	border: 3px solid red;
+	background:rgba(100,0,0,0.5);
     opacity: 1;
     transition: all 0.5s;
+}
+
+#bcdemo footer { 
+	width: 100%;
+	text-align: center;
+	font-size: 20px;
+	position: fixed; 
+	bottom: 0%;
+}
+
+#bcdemo .bcmodal { 
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #BE933D; /*rgb(0,0,0);*/
+    /*background-color: rgba(0,0,0,0.8);*/
+}
+
+#bcdemo .modal-content { 
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+#bcdemo .close { 
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#bcdemo .close:hover,
+#bcdemo.close:focus { 
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#bcdemo .cloud-bg { 
+	background-size: 110px 60px;
+	background-image: url("/assets/img/clouds.png");
+	background-repeat: repeat;
+}
+
+#bcdemo section img.nobg { 
+    background: none;
+    box-shadow: none;
 }
