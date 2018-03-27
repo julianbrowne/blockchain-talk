@@ -8,5 +8,5 @@
 
 
 <footer>
-	https://github.com/julianbrowne/blockchain-talk
+	https://github.com/cohaesus/blockchain-talk
 </footer>

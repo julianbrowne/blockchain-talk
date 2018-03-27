@@ -3,7 +3,10 @@
 
 <div style="text-align: center;">
     <span id="clear-textarea" class="bc-button"><i class="fas fa-eraser"></i></span>
+    <span id="save-hash" class="bc-button"><i class="fas fa-save"></i></span>
     <span id="shakespeare" class="bc-button"><i class="fas fa-quote-left"></i></span>
+    <span id="sign-alice" class="bc-button"><i class="fas fa-user-secret"></i></span>
+    <span id="google" class="bc-button"><i class="fab fa-google"></i></span>
 </div>
 
 <div class="bc-group darker">
@@ -13,13 +16,10 @@
     </div>
     <div class="bc-row">
         <label class="bc-label" for="digest-01">hash</label>
-        <input id="digest-01" class="bc-hash-text-display" type="text" disabled>
+        <input id="digest-01" class="bc-hash-text-display bc-readonly1" type="text" disabled>
     </div>
-</div>
-
-<div class="bc-group fragment">
     <div class="bc-row">
-        <span class="bc-label">signature?</span>
-        <span id="digest-02" class="bc-hash-text-display"></span>
+        <span class="bc-label-icon"><i class="fas fa-save"></i></span>
+        <span id="digest-02" class="bc-hash-text-display bc-readonly2"></span>
     </div>
 </div>
