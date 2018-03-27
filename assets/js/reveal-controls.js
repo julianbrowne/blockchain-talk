@@ -41,6 +41,7 @@ Reveal.addEventListener("xor", function() {
 
 	function convertToBinary(oneCharString) { 
 		var asciiBinary = "000000000";
+		if(oneCharString[0] === undefined) return "";
 		var bin = oneCharString[0].charCodeAt(0).toString(2) + " ";
 		return (asciiBinary + bin).slice(-asciiBinary.length);
 	};
