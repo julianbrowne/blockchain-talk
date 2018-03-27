@@ -282,6 +282,10 @@ span.bc-hash-text-display {
 	text-align: center;
 }
 
+#bcdemo .bc-digit-input:disabled { 
+	background: #E8EBEC;
+}
+
 #bcdemo .xor-input,
 #bcdemo .xor-output { 
 	width: 50px;
