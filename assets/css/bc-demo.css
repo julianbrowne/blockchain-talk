@@ -271,12 +271,6 @@ span.bc-hash-text-display {
     cursor: pointer;
 }
 
-#bcdemo .cloud-bg { 
-	background-size: 110px 60px;
-	background-image: url("/assets/img/clouds.png");
-	background-repeat: repeat;
-}
-
 #bcdemo section img.nobg { 
     background: none;
     box-shadow: none;
