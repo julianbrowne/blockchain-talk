@@ -16,7 +16,11 @@ Pinboard adapted from [CSS Sticky Notes](https://github.com/rheh/CSS-Sticky-Note
 
 More about the content can be found in the [content doc](content.md)
 
-# Installation
+## View
+
+go to `https://cohaesus.github.io/blockchain-talk`
+
+## Install Locally
 
 Clone this repo locally:
 
