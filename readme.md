@@ -18,7 +18,7 @@ More about the content can be found in the [content doc](content.md)
 
 ## View
 
-go to `https://cohaesus.github.io/blockchain-talk`
+go to [https://cohaesus.github.io/blockchain-talk](https://cohaesus.github.io/blockchain-talk)
 
 ## Install Locally
 
