@@ -1,6 +1,6 @@
 
 
-<img style="margin: 0px auto;" src="../assets/img/cohaesus.png">
+<img style="margin: 0px auto;" src="assets/img/cohaesus.png">
 
 # Blockchain
 
