@@ -30,7 +30,7 @@ Access from behind any http server (I used [apache anywhere](https://github.com/
 
 Everything is static html and client side javascript.
 
-To use the reveal.js build in server:
+To use the reveal.js built-in server:
 
 `cd vendor/reveal`
 
