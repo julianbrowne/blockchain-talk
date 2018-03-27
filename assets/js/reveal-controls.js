@@ -13,6 +13,17 @@ Reveal.initialize({
 	]
 });
 
+function showFooterAfterDelay() { 
+	$(".footer")
+	.delay(1000)
+	.queue(function(n) { 
+		$(this).css("color", "#000000"); 
+		n(); 
+	});
+};
+
+Reveal.addEventListener("title", showFooterAfterDelay);
+
 Reveal.addEventListener("pinboard", function() { 
 
 	$("#frame").closest("section").first().addClass("scrollable");
@@ -261,4 +272,5 @@ Reveal.addEventListener("mining", function() {
 
 Reveal.addEventListener('thanks', function() { 
 	$("#thanks-hash").html(bcDemo.hash("thank you"));
+	showFooterAfterDelay();
 });
