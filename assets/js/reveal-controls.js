@@ -1,5 +1,6 @@
 Reveal.initialize({ 
 	history: true,
+	center: false,
 	dependencies: [ 
 		{ src: 'vendor/reveal/plugin/markdown/marked.js' },
 		{ src: 'vendor/reveal/plugin/markdown/markdown.js' },
@@ -90,22 +91,48 @@ Reveal.addEventListener("xor", function() {
 
 Reveal.addEventListener("hash", function() { 
 
-	$("#digest-01").val(bcDemo.hash(""));
+	$("#digest-01").val(bcDemo.hash($("#message-01").val()));
 
 	$("#message-01").keyup(function() { 
 		bcDemo.updateHashValueForTextInput($(this));
 	});
 
-	$("#digest-02").html(bcDemo.hash("alice"));
-
 	$("#clear-textarea").on("click", function() { 
 		$("#message-01").val("");
+		$("#digest-02").html("");
 		bcDemo.updateHashValueForTextInput($("#message-01"));
+	});
+
+	$("#save-hash").on("click", function() { 
+		$("#digest-02").html($("#digest-01").val());
 	});
 
 	$("#shakespeare").on("click", function() { 
 		$("#message-01").val("How all occasions do inform against me, And spur my dull revenge! What is a man, If his chief good and market of his time Be but to sleep and feed? a beast, no more. Sure, he that made us with such large discourse, Looking before and after, gave us not That capability and god-like reason To fust in us unused. Now, whether it be Bestial oblivion, or some craven scruple Of thinking too precisely on the event, A thought which, quarter’d, hath but one part wisdom And ever three parts coward, I do not know Why yet I live to say ‘This thing’s to do;’ Sith I have cause and will and strength and means To do’t. Examples gross as earth exhort me: Witness this army of such mass and charge Led by a delicate and tender prince, Whose spirit with divine ambition puff’d Makes mouths at the invisible event, Exposing what is mortal and unsure To all that fortune, death and danger dare, Even for an egg-shell. Rightly to be great Is not to stir without great argument, But greatly to find quarrel in a straw When honour’s at the stake. How stand I then, That have a father kill’d, a mother stain’d, Excitements of my reason and my blood, And let all sleep? while, to my shame, I see The imminent death of twenty thousand men, That, for a fantasy and trick of fame, Go to their graves like beds, fight for a plot Whereon the numbers cannot try the cause, Which is not tomb enough and continent To hide the slain? O, from this time forth, My thoughts be bloody, or be nothing worth!");
+		$("#digest-02").html("");
 		bcDemo.updateHashValueForTextInput($("#message-01"));
+	});
+
+	$("#sign-alice").on("click", function() { 
+		$("#message-01").val("");
+		$("#digest-01").val("");
+		$("#digest-02").html(bcDemo.hash("alice"));
+	});
+
+	function searchWindow(term) { 
+		var url = "https://www.google.co.uk/search?q=" + term;
+		var name = "search";
+		var w = 800;
+		var h = 400;
+		var x = 200;
+		var y = 200;
+
+		window.open(url,name,"resizable=no,toolbar=no,scrollbars=no,menubar=no,status=no,directories=n o,width="+w+",height="+h+",left="+x+",top="+y+"");
+	};
+
+	$("#google").on("click", function() { 
+		var hash = $("#digest-01").val();;
+		searchWindow(hash);
 	});
 
 });
@@ -143,6 +170,22 @@ Reveal.addEventListener('links', function() {
 
 	});
 
+	$("#add-brexit").on("click", function() { 
+
+		$("#message-11").val("Form #FBPE group on twitter");
+		$("#message-12").val("Alice steals all the impact documents");
+		$("#message-13").val("General Election: Bob for PM");
+
+		bcDemo.updateHashValueForChainedTextInputs($("#message-11"));
+		bcDemo.updateHashValueForChainedTextInputs($("#message-12"));
+		bcDemo.updateHashValueForChainedTextInputs($("#message-13"));
+
+		allStateManagers.each(function(index) { 
+			$(this).data("state-manager").checkAndAlertStateChange();
+		});
+
+	});
+
 	$("#clear-all").on("click", function() { 
 
 		var allTextInputs = $(this).closest("section").find(".bc-mesg-text-input");
@@ -159,7 +202,11 @@ Reveal.addEventListener('links', function() {
 
 	});
 
-	$(".bc-mesg-text-input").keyup(function() { 
+	var allMessageTextInputs = $("#message-11")
+		.closest("section")
+		.find(".bc-mesg-text-input");
+
+	$(allMessageTextInputs).keyup(function() { 
 
 		bcDemo.updateHashValueForChainedTextInputs($(this));
 
@@ -178,7 +225,11 @@ Reveal.addEventListener("mining", function() {
 
 	bcDemo.updateHashValueForChainedTextInputs($("#message-21"));
 
-	$(".bc-mesg-text-input").keyup(function() { 
+	var allMessageTextInputs = $("#message-21")
+		.closest("section")
+		.find(".bc-mesg-text-input");
+
+	$(allMessageTextInputs).keyup(function() { 
 
 		bcDemo.updateHashValueForChainedTextInputs($(this));
 

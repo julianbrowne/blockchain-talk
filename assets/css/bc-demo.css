@@ -52,6 +52,19 @@ body {
  *	Local add-ons
 **/
 
+#bcdemo .bc-subtitle { 
+	color: #000000;
+	margin-top: -10px;
+	font-size: 22px;
+}
+
+#bcdemo .bc-section-heading { 
+	color: #38444C;
+	text-align: left;
+	font-size: 38px;
+	margin: 0 0 0 2em;
+}
+
 #bcdemo .bc-group { 
     display: block;
     margin: 10px;
@@ -91,7 +104,8 @@ body {
 	height: 200px;
 }
 
-#bcdemo .bc-label { 
+#bcdemo .bc-label,
+#bcdemo .bc-label-icon { 
 	color: black;
 	display: inline-block;
 	vertical-align: top;
@@ -102,6 +116,18 @@ body {
 	font-weight: 700;
 	font-size: 20px;
 	vertical-align: baseline;
+}
+
+#bcdemo .bc-label-icon { 
+	font-size: inherit;	
+}
+
+#bcdemo .bc-readonly1 { 
+	background: #FAF0E6;
+}
+
+#bcdemo .bc-readonly2 { 
+	background: #FFFFE0;
 }
 
 #bcdemo input, 
@@ -126,6 +152,11 @@ body {
 	outline : none;
 	padding: 5px;
 	margin: 10px;
+}
+
+#bcdemo .bc-hash-text-display { 
+	font-family: courier;
+	font-size: 18px;
 }
 
 #bcdemo .bc-text-top { 
