@@ -1,7 +1,7 @@
 
 # Blockchain: Secret Sauce or Snake Oil?
 
-Presentation from a [Cohaesus](https://cohaesus.co.uk/) [tech talk](https://www.eventbrite.co.uk/e/blockchain-secret-sauce-or-snake-oil-tickets-43202281186) puncturing some the the myths about blockchain. The talk was designed to explain blockchain from first principles to a non-tech audience.
+Presentation from a [Cohaesus](https://cohaesus.co.uk/) [tech talk](https://www.eventbrite.co.uk/e/blockchain-secret-sauce-or-snake-oil-tickets-43202281186) puncturing some of the myths about blockchain. The talk was designed to explain blockchain from first principles to a non-tech audience.
 
 The code snapshot from the night can be found at https://github.com/cohaesus/blockchain-talk   
 
