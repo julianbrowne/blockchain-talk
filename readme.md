@@ -1,8 +1,9 @@
 
 # Blockchain: Secret Sauce or Snake Oil?
 
-Reveal.js presentation explaining concepts of blockchain
-from first principles.
+Presentation from a [Cohaesus](https://cohaesus.co.uk/) [tech talk](https://www.eventbrite.co.uk/e/blockchain-secret-sauce-or-snake-oil-tickets-43202281186) puncturing some the the myths about blockchain. The talk was designed to explain blockchain from first principles to a non-tech audience.
+
+The code snapshot from the night can be found at https://github.com/cohaesus/blockchain-talk   
 
 ## Credits
 
@@ -18,23 +19,18 @@ More about the content can be found in the [content doc](content.md)
 
 ## View
 
-go to [https://cohaesus.github.io/blockchain-talk](https://cohaesus.github.io/blockchain-talk)
+Watch the presentation [here](https://julianbrowne.github.io/blockchain-talk)
 
 ## Install Locally
 
-Clone this repo locally:
+Clone this repo:
 
 `git clone https://github.com/julianbrowne/blockchain-talk.git`
 
-Access from behind any http server (I used [apache anywhere](https://github.com/julianbrowne/apache-anywhere) in development).
-
-Everything is static html and client side javascript.
-
-To use the reveal.js built-in server:
+Run the reveal http server:
 
 `cd vendor/reveal`
 
 `npm install`
 
 `npm start -- --port=8001 --root=../..`
-
