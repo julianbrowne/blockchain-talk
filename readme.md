@@ -13,17 +13,19 @@ A demystification of blockchain and bitcoin.
 
 * Clone the repo
 
-	* `git clone https://github.com/julianbrowne/blockchain-talk.git`
+	* `git clone https://github.com/julianbrowne/blockchain-talk.git`   
+
+	* `cd blockchain-talk`   
 
 * Install dependencies
 
 	* `npm install`
 
-* Run the reveal http server
+* Run the http server
 
-	* `cd vendor/reveal`
+	* `./run.sh` // defaults to port 8080
 
-	* `npm start -- --port=8001 --root=../..`
+	* Point a modern browser at `http://127.0.0.1:8080`
 
 
 ## Background
